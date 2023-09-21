@@ -14,10 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Example of data returning, should be from db
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings', [
+        'heading' => 'Latest Listings',
+        'listings' => [
+            [
+                'id' => 1,
+                'title' => 'Listings one',
+                'description' => 'Whew!'
+            ],
+            [
+                'id' => 2,
+                'title' => 'Listings two',
+                'description' => 'Whew 22!'
+            ]
+        ]
+    ]);
 });
-
+/*
 //Testing routes
 Route::get('/hello', function () {
     return response('<h1>Hello World</h1>', 404)
@@ -38,3 +53,4 @@ Route::get('/posts/{id}', function ($id) {
 Route::get('/search', function (Request $request) {
     return $request->name . ' ' . $request->city;
 });
+*/
