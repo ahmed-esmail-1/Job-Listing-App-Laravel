@@ -8,6 +8,21 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * All migrations has up and down functions, 
+     * we don't have to create a table manually just by migrations
+     * 
+     * To create a new migration (table):- 
+     * php artisan make:migration create_{table_name}_table
+     * 
+     * then migrate everything:-
+     * php artisan migrate
+     * 
+     * Under database section, there is 1- migrations,
+     * 2- seeders: fill the database tables with dummy data for testing
+     * 3- factories: seeders uses faker from factories
+     * to run: php artisan db:seed
+     * Now after we check it is working, we refresh so the dummy data is deleted:
+     * php artisan migrate:refresh
      */
     public function up(): void
     {
