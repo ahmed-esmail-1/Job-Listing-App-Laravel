@@ -15,6 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(5)->create(); //uncomment this for seed
 
+        //php artisan migrate:refresh --seed
+
+        Listing::factory(6)->create();
+
         Listing::create([
             'title' => 'Laravel Senior Developer',
             'tags' => 'laravel, javascript',
