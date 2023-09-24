@@ -5,10 +5,7 @@
     so it will be easier than extends
     --}}
 
-@extends('layout')
-
-
-@section('content')
+<x-layout>
     @include('partials._hero') {{-- Notice here, dot '.' not / --}}
     @include('partials/_search') {{-- Both notation works in blade --}}
 
@@ -24,7 +21,7 @@
         @endunless
 
     </div>
-@endsection
+</x-layout>
 
 
 {{--
