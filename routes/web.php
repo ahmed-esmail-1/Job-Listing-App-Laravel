@@ -25,9 +25,9 @@ Route::get('/', function () {
 });
 
 //Single listing
-Route::get('/listings/{id}', function ($id) {
+Route::get('/listings/{listing}', function (Listing $listing) {
     return view('listing', [
-        'listing' => Listing::find($id)      //use all the Listing model methods, this is php syntax
+        'listing' =>  $listing       //use all the Listing model methods, this is php syntax
     ]);
 });
 
