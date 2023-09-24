@@ -17,7 +17,7 @@
 
         @unless (count($listings) == 0)
             @foreach ($listings as $listing)
-                <x-listing-card :listing="$listing" />
+                <x-listing-card :listing="$listing" />{{-- Send to the child component --}}
             @endforeach
         @else
             <p>No listings found</p>
