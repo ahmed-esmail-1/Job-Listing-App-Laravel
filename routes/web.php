@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
 
+//Steps to make a new functionality: Route -> Controller method -> View
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +22,20 @@ use App\Models\Listing;
 //All listings
 Route::get('/', [ListingController::class, 'index']);
 
+
+
+//Show create form
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+//it was looking to this route not show create, that is why I took it to the buttom
 //Single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+
+
+
+
+
 
 
  // Common Resource Routes:
