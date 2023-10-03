@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
+use TijsVerkoyen\CssToInlineStyles\Css\Rule\Rule as RuleRule;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+
+
 //php artisan make:controller NameController
 //The functions must be in the controller, not the routes
 class ListingController extends Controller
@@ -31,5 +38,19 @@ class ListingController extends Controller
     public function create()
     {
         return view('listings.create');
+    }
+
+    //Store listing data
+    public function store(Request $request)
+    {
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => 'required', //Not working so.. ['required', Rule::unique('listings', 'company')]
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
     }
 }
