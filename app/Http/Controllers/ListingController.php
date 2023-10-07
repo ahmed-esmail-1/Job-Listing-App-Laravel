@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
 use TijsVerkoyen\CssToInlineStyles\Css\Rule\Rule as RuleRule;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+
 
 
 //php artisan make:controller NameController
@@ -55,6 +57,6 @@ class ListingController extends Controller
 
         Listing::create($formFields);
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Listing created successfully!');
     }
 }
