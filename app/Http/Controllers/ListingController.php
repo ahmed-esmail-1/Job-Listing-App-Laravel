@@ -24,7 +24,9 @@ class ListingController extends Controller
             //'heading' => 'Latest Listings',
             //'listings' => Listing::all()      //use all the Listing model methods, this is php syntax
             'listings' => Listing::latest()-> //sorted by latest (the jobs)
-                filter(request(['tag', 'search']))->get()  //filter by tag (ex: vue), pass search too
+                filter(request(['tag', 'search']))->paginate(4)  //Pagination, take a num, how many posts to display
+            //Run this command and choose pagination package, it will give you templates
+            //php artisan vendor:publish
         ]);
     }
 

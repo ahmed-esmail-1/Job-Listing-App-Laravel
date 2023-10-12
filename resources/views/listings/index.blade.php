@@ -21,6 +21,10 @@
         @endunless
 
     </div>
+
+    <div class="mt-6 p-4">
+        {{ $listings->links() }} {{-- Show the pagination numbers, 1,2,3 --}}
+    </div>
 </x-layout>
 
 
