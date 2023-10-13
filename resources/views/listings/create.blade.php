@@ -7,7 +7,7 @@
             <p class="mb-4">Post a Job to find a developer</p>
         </header>
 
-        <form method="POST" action="/listings">
+        <form method="POST" action="/listings" enctype="multipart/form-data">
 
             @csrf {{-- Protect the website --}}
             <div class="mb-6">
@@ -83,7 +83,7 @@
                     Job Description
                 </label>
                 <textarea class="border border-gray-200 rounded p-2 w-full" name="description" rows="10"
-                    placeholder="Include tasks, requirements, salary, etc">{{ old('textarea') }}</textarea>
+                    placeholder="Include tasks, requirements, salary, etc">{{ old('description') }}</textarea>
                 @error('description')
                     <p class="text-red-500 text-mx mt-1">{{ $message }}</p>
                 @enderror
