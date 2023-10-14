@@ -31,6 +31,12 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 //Store listing data
 Route::post('/listings', [ListingController::class, 'store']);
 
+//Show edit form
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+//Update listing
+Route::put('listings/{listing}', [ListingController::class, 'update']);
+
 
 //it was looking to this route not show create, that is why I took it to the buttom
 //Single listing
