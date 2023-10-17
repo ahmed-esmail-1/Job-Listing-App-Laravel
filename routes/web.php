@@ -37,6 +37,9 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 //Update listing
 Route::put('listings/{listing}', [ListingController::class, 'update']);
 
+//Delete listing
+Route::delete('listings/{listing}', [ListingController::class, 'destroy']);
+
 
 //it was looking to this route not show create, that is why I took it to the buttom
 //Single listing
