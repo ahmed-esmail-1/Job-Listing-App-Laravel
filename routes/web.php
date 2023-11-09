@@ -41,6 +41,8 @@ Route::put('listings/{listing}', [ListingController::class, 'update'])->middlewa
 //Delete listing
 Route::delete('listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
+//Manage listings
+Route::get('/listings/manage', [ListingController::class, 'manage']);
 
 //it was looking to this route not show create, that is why I took it to the buttom
 //Single listing
@@ -60,6 +62,8 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 //Log in user
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
 
 
  // Common Resource Routes:
