@@ -42,7 +42,7 @@ Route::put('listings/{listing}', [ListingController::class, 'update'])->middlewa
 Route::delete('listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
 //Manage listings
-Route::get('/listings/manage', [ListingController::class, 'manage']);
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
 //it was looking to this route not show create, that is why I took it to the buttom
 //Single listing

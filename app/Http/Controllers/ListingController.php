@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use App\Models\User;
+
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
@@ -76,6 +78,7 @@ class ListingController extends Controller
     //Update listing data
     public function update(Request $request, Listing $listing)
     {
+
         $formFields = $request->validate([
             'title' => 'required',
             'company' => 'required',
@@ -100,5 +103,11 @@ class ListingController extends Controller
     {
         $listing->delete();
         return redirect('/')->with('message', 'Listing deleted successfully');
+    }
+
+    //Manage listings
+    public function manage()
+    {
+        return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
     }
 }
