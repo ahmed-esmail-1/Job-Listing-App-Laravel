@@ -15,8 +15,6 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 
 
-//php artisan make:controller NameController
-//The functions must be in the controller, not the routes
 class ListingController extends Controller
 {
     //Show all listings
@@ -24,11 +22,9 @@ class ListingController extends Controller
     {
         return view('listings.index', [
             //'heading' => 'Latest Listings',
-            //'listings' => Listing::all()      //use all the Listing model methods, this is php syntax
-            'listings' => Listing::latest()-> //sorted by latest (the jobs)
-                filter(request(['tag', 'search']))->paginate(4)  //Pagination, take a num, how many posts to display
-            //Run this command and choose pagination package, it will give you templates
-            //php artisan vendor:publish
+            //'listings' => Listing::all()      
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(4)
+
         ]);
     }
 
@@ -51,7 +47,7 @@ class ListingController extends Controller
     {
         $formFields = $request->validate([
             'title' => 'required',
-            'company' => 'required', //Not working so.. ['required', Rule::unique('listings', 'company')]
+            'company' => 'required',
             'location' => 'required',
             'website' => 'required',
             'email' => ['required', 'email'],

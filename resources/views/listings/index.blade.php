@@ -1,20 +1,13 @@
-{{-- Layout is header and footer, everything but the main view 
-    yield('content')
-    section('content')
-    later I will try to make the layout a component
-    so it will be easier than extends
-    --}}
-
 <x-layout>
-    @include('partials._hero') {{-- Notice here, dot '.' not / --}}
-    @include('partials/_search') {{-- Both notation works in blade --}}
+    @include('partials._hero')
+    @include('partials/_search')
 
     <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
 
 
         @unless (count($listings) == 0)
             @foreach ($listings as $listing)
-                <x-listing-card :listing="$listing" />{{-- Send to the child component --}}
+                <x-listing-card :listing="$listing" />
             @endforeach
         @else
             <p>No listings found</p>
@@ -23,28 +16,6 @@
     </div>
 
     <div class="mt-6 p-4">
-        {{ $listings->links() }} {{-- Show the pagination numbers, 1,2,3 --}}
+        {{ $listings->links() }}
     </div>
 </x-layout>
-
-
-{{--
-    If there is not listings, or with unless both ways work
-    
-    @if (count($listings) == 0)
-    <p></p>
-@endif
---}}
-
-{{-- 
-    
-             php directive 
-
-Let's say there is something you can't do in the controller or
-route, you can do this here like normal coding
-
-@php
-    $test = 1;
-@endphp
-{{ $test }}
---}}

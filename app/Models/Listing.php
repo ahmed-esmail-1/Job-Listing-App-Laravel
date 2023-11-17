@@ -12,8 +12,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-    //1. Mass assignment rule 
-    //either this or in the file AppServiceProvider
+
     protected $fillable = ['title', 'company', 'location', 'website', 'email', 'description', 'tags'];
 
     public function scopeFilter($query, array $filters)
@@ -29,7 +28,7 @@ class Listing extends Model
         }
     }
 
-    //Relationship to user
+
     public function user()
     {
         return $this->belongsTo(User::class);

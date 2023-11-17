@@ -16,18 +16,19 @@
             theme: {
                 extend: {
                     colors: {
-                        laravel: "#0096FF",
+                        laravel: "#4EFFEF",
+                        laravel2: "#7F96FF",
                     },
                 },
             },
         };
     </script>
-    <title>Laravel Jobs | Find Laravel Jobs & Projects</title>
+    <title>Tech Opportunities | Find Tech Jobs & Projects</title>
 </head>
 
 <body class="mb-48">
-    <nav class="flex justify-between items-center mb-4">
-        <a href="/"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" /></a>
+    <nav class="flex justify-between items-center mb-4 bg-gradient-to-r from-laravel2 to-laravel  ">
+        <a href="/"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="Logo Pic" class="logo" /></a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
                 <li>
@@ -36,11 +37,11 @@
                     </span>
                 </li>
                 <li>
-                    <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
+                    <a href="/listings/manage" class="hover:text-laravel2"><i class="fa-solid fa-gear"></i>
                         Manage Listings</a>
                 </li>
                 <li>
-                    <form class="inline" method="POST" action="/logout">
+                    <form class="inline hover:text-laravel2" method="POST" action="/logout">
                         @csrf
                         <button type="submit">
 
@@ -50,10 +51,10 @@
                 </li>
             @else
                 <li>
-                    <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
+                    <a href="/register" class="hover:text-laravel2"><i class="fa-solid fa-user-plus"></i> Register</a>
                 </li>
                 <li>
-                    <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <a href="/login" class="hover:text-laravel2"><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a>
                 </li>
             @endauth
@@ -66,10 +67,11 @@
 
 
     <footer
-        class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
+        class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-gradient-to-r from-laravel to-laravel2 text-white h-20 mt-24 opacity-90 md:justify-center">
         <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
 
-        <a href="/listings/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Post Job</a>
+        <a href="/listings/create"
+            class="absolute top-1/3 right-10 bg-black text-white py-2 px-5 hover:text-laravel2">Post Job</a>
     </footer>
     <x-flash-message />
 </body>

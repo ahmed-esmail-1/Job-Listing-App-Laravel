@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Validation\Rule; // Add this import statement fot Rule
+use Illuminate\Validation\Rule; // Add this import statement for Rule
 
 use Illuminate\Http\Request;
 

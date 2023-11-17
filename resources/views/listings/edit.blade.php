@@ -9,7 +9,7 @@
 
         <form method="POST" action="/listings/{{ $listing->id }}" enctype="multipart/form-data">
 
-            @csrf {{-- Protect the website --}}
+            @csrf
             @method('PUT')
             <div class="mb-6">
                 <label for="company" class="inline-block text-lg mb-2">Company Name</label>
