@@ -29,6 +29,13 @@ return [
     */
 
     'disks' => [
+        // New disk to store in public rather than storage -> public bcs 
+        // The server which I'm hosting my website does not support links so I cannot run the php artisan storage:link 
+        // to link my storage directory into the public directory. 
+        'public_uploads' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/logos',
+        ],
 
         'local' => [
             'driver' => 'local',

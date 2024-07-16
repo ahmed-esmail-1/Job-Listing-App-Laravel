@@ -5,7 +5,28 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
+use Illuminate\Support\Facades\Artisan;
 
+
+// Route::get('/run-migrations', function () {
+//     try {
+//         Artisan::call('migrate', ['--force' => true]);
+//         return response()->json(['status' => 'success', 'message' => 'Migrations ran successfully.']);
+//     } catch (\Exception $e) {
+//         return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
+//     }
+// });
+
+
+// NOT WORKING BVS SERVER DOES NOT SUPPORT MAYBE, SO DIRECTLY SAVE IN PUBLIC (NOT STORAGE/PUBLIC)
+// Route::get('/run-storage-link', function () {
+//     try {
+//         Artisan::call('storage:link');
+//         return response()->json(['status' => 'success', 'message' => 'Storage link created successfully.']);
+//     } catch (\Exception $e) {
+//         return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
+//     }
+// });
 
 
 //All listings
