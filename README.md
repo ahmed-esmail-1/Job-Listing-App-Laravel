@@ -1,7 +1,10 @@
-    Check the live version:- 
-    https://jobs.ahmedesmail.tech/
-    
-    To run it on your machine:-
+Check the live version:- 
+
+    https://jobs.ahmedesmail.tech
+
+
+
+To run it on your machine:-
 1) You will need php
 2) composer
 3) localdb
