@@ -45,3 +45,6 @@ php artisan make:filament-resource Listing
 php artisan storage:link<br>
 http://127.0.0.1:8000/storage/01J5XS72YXHTYXD4TGZ2VM085B.svg
 
+- Config for Filament<br>
+php artisan vendor:publish --tag=filament-config
+

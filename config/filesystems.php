@@ -77,7 +77,12 @@ return [
     */
 
     'links' => [
+        // Local
         public_path('storage') => storage_path('app/public'),
+        // Server (C-Panel)
+        // public_path('public_html/storage') => storage_path('app/public'),
+        // Maybe it's the server ^_^
+
     ],
 
 ];
