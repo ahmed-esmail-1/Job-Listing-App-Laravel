@@ -19,24 +19,29 @@ If you have any issues feel free to reach out.
 
 Integrating Filament:-
 
-- Installing:-
+
+- Installing<br>
 composer require filament/filament
 
-- Creating a new panel
+
+- Creating a new panel<br>
 php artisan filament:install --panels
 Id: admin
 
-- Creating a user
+
+- Creating a user<br>
 php artisan make:filament-user
 Ahmed
 info@ahmedesmail.tech
 Password
 Success! info@ahmedesmail.tech may now log in at http://localhost/admin/login.
 
-- Creating a new resource (Core concept)
+
+- Creating a new resource (Core concept)<br>
 php artisan make:filament-resource Listing
 
-- For file uploading
+
+- For file uploading<br>
 php artisan storage:link
 http://127.0.0.1:8000/storage/01J5XS72YXHTYXD4TGZ2VM085B.svg
 
