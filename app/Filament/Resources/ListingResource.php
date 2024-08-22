@@ -25,7 +25,11 @@ class ListingResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('user_id')->required(),
                 Forms\Components\TextInput::make('title')->required(),
-                Forms\Components\FileUpload::make('logo')->downloadable(),
+                Forms\Components\FileUpload::make('logo')
+                    ->disk('public_uploads')  // Ensure this matches your disk configuration
+                    ->directory('logos')      // This specifies the directory under the disk
+                    ->image()                 // Optional: if you want to validate image files
+                    ->required(),            // Make it required if needed
                 Forms\Components\TextInput::make('tags')->required(),
                 Forms\Components\TextInput::make('company')->required(),
                 Forms\Components\TextInput::make('location')->required(),
@@ -42,7 +46,9 @@ class ListingResource extends Resource
                 Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('user_id'),
                 Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\ImageColumn::make('logo'),
+                Tables\Columns\ImageColumn::make('logo')      // Display image previews
+                    ->disk('public_uploads')                   // Ensure this matches your disk configuration
+                    ->directory('logos'),                      // This specifies the directory under the disk
                 Tables\Columns\TextColumn::make('tags'),
                 Tables\Columns\TextColumn::make('company'),
                 Tables\Columns\TextColumn::make('location'),
